@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMLARLA ÇALIŞMAK</title>
+</head>
+
+<body>
+    <!-- POST:Gizli paket olarak GET:Adres satısında göstererek (url üzerinde) -->
+    <!-- enctype="multipart/form-data" bu resim dosyasının gönderilmesi için gerekir -->
+    <form action="" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <!-- Çerçeve ekler -->
+            <legend>legend ile Çerçeve yazısı</legend>
+            <input type="checkbox" name="onay" id="onay" value="1" required> <!-- required (zorunlu alan)-->
+            <label for="onay">checkbox - Sözleşmeyi kabul ediyorum.</label><br>
+            <input type="submit" value="Kaydet" id="btnKaydet" name="btnKaydet">
+            <input type="reset" value="Temizle" id="btnKaydet" name="btnKaydet">
+        </fieldset>
+        <fieldset>
+            <legend> legend - Kullanıcı Bilgileri </legend>
+            <table>
+                <tr>
+                    <td>Form Güvenlik ID</td>
+                    <td>
+                        <!-- disabled alanlar gönderilmez sadece gösterilir, 
+                            bunun için ikinci input HİDDEN özelliği ile veri yollar-->
+                        <input type="text" id="gID" name="gID" value="abcdefg" disabled>
+                        <input type="hidden" id="gID_" name="gID_" value="abcdefg">
+                    </td>
+                </tr>
+                <tr>
+                    <td>İsim</td>
+                    <td>
+                        <input type="text" id="name" name="name" placeholder="isim" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Soyadı</td>
+                    <td>
+                        <input type="text" id="lastname" name="lastname" placeholder="soyadı" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Yaş</td>
+                    <td>
+                        <input type="number" name="age" id="age" max="99" min="15" step="5">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mail</td>
+                    <td>
+                        <input type="email" name="e_mail" id="e_mail" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fotoğraf Ekle</td>
+                    <td>
+                        <input type="file" name="photo" id="photo">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ürün Şifresi</td>
+                    <td>
+                        <input type="password" name="pword" id="pword" maxlength="6" required>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend> legend - Diğer Bilgiler</legend>
+            <table>
+                <tr>
+                    <th colspan="2">Mesleki Donanım</th>    <!-- th t h = table header -->
+                </tr>
+                <tr>
+                    <td>Sektöre Giriş Tarihi</td>
+                    <td>
+                        <input type="date" name="date" id="date" value="2020-03-01" style="text-align: right">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sektör Deneyimi</td>
+                    <td>
+                        <label>
+                            <!-- DİKKAT : radio kullanmmda name aynı olmalı id farklı -->
+                            <input type="radio" name="meslekNO" id="meslek1" value="1">1-5 Yıl
+                            <br><input type="radio" name="meslekNO" id="meslek2" value="2">6-10 Yıl
+                            <br><input type="radio" name="meslekNO" id="meslek3" value="3">11-15 Yıl
+                            <br><input type="radio" name="meslekNO" id="meslek4" value="4">15 Yıl üzeri
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Programlama Dilleri</td>
+                    <td>
+                        <select name="languages" id="languages">
+                            <option value="C#">C#</option>
+                            <option value="Python" selected>Python</option>
+                            <option value="Javascript">Javascript</option>
+                            <option value="Java">Java</option>
+                            <option value="C++">C++</option>
+                            <option value="PHP">PHP</option>
+                            <option value="Flutter">Flutter</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Programlama Dilleri 2. Kullanım</td>
+                    <td>
+                        <select size="5" multiple name="languages" id="languages">
+                            <option value="C#">C#</option>
+                            <option value="Python">Python</option>
+                            <option value="Javascript" selected>Javascript</option>
+                            <option value="Java">Java</option>
+                            <option value="C++">C++</option>
+                            <option value="PHP">PHP</option>
+                            <option value="Flutter">Flutter</option>
+                        </select>
+                    </td>
+                </tr>         
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Sözleşme</legend>
+            <textarea readonly name="sozlesme" id="sozlesme" cols="50" rows="10">    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis a, reiciendis sit beatae deserunt modi odio quasi itaque tenetur quae nostrum non at molestiae libero tempora eveniet ipsum. Exercitationem, expedita.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque eius facilis sapiente labore iste porro quibusdam, nobis perspiciatis accusamus natus recusandae obcaecati, hic expedita vero voluptas deleniti dolore, ab adipisci!
+            </textarea>            
+        </fieldset>
+        <fieldset>
+            <legend>Mail listesi</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label for="mailList1">Mail almak <b>istiyorum.</b></label>
+                    </td>
+                    <td>
+                        <input type="radio" name="mailList" id="mailList1" checked>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="mailList2">Mail almak <b><u>istemiyorum.</u></b></label>
+                    </td>
+                    <td>
+                        <input type="radio" name="mailList" id="mailList2">
+                    </td>
+                </tr>
+            </table>     
+        </fieldset>
+    </form>
+
+
+</body>
+
+</html>
