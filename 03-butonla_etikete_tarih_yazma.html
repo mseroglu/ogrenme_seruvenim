@@ -28,20 +28,25 @@
     </style>
 </head>
 <body>
-    <button onclick="bas()"> 
+    <button onclick="goster()"> 
         TARİHİ YAZDIR
     </button>
 
     <p id="tarih_alani">Buraya tarih bilgisi gelecek</p>
+    <p id="saat_alani">Buraya saat bilgisi gelecek</p>
 
     <script>
-        function bas (){
+        function goster (){
             const aylar = ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"]
             const now_ = new Date()
             let gun = now_.getDay() < 10 ? "0"+now_.getDay() : now_.getDay()
             let ay = aylar[now_.getMonth()]
             let yil = now_.getFullYear()
+            let saat = now_.getHours() < 10 ? "0"+now_.getHours() : now_.getHours()
+            let dk = now_.getMinutes() < 10 ? "0"+now_.getMinutes() : now_.getMinutes()
+            let sn = now_.getSeconds() < 10 ? "0"+now_.getSeconds() : now_.getSeconds()
             document.getElementById('tarih_alani').innerHTML = gun+ " " + ay+ " " +yil
+            document.getElementById('saat_alani').innerHTML = saat+" : "+dk+" : "+sn
         }
     </script>
 
