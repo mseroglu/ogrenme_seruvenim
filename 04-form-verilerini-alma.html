@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form verilerini alma</title>
+    <style>
+        button{
+            background-color: rgb(17, 17, 156);
+            color: rgb(250, 228, 200);
+            height: 50px;
+            width: 200px;
+            font-weight: bolder; 
+            font-size: larger;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <form id="myForm" action="" method="post">
+        <h1>Submit event on Javascript</h1>
+        <table>
+            <tr>
+                <td><label for="username">Kullanıcı Adı</label></td>
+                <td><input type="text" name="username" id="username"></td>
+            </tr>
+            <tr>
+                <td><label for="password">Şifre</label></td>
+                <td><input type="text" name="password" id="password"></td>
+            </tr>
+        </table>
+        <button type="submit">Gönder</button>
+        
+        
+    </form>
+
+
+    <script>
+        const myForm = document.getElementById("myForm")
+        myForm.addEventListener("submit", (event) => {
+            event.preventDefault()
+
+            const request = new XMLHttpRequest()
+            request.open("post", "login.php")
+            request.onload = function(){
+                console.log(request.responseText); 
+            } 
+            request.send(new FormData(myForm))
+        })
+
+    </script>
+    
+</body>
+</html>
